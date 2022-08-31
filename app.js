@@ -1,11 +1,10 @@
 const slides = document.querySelectorAll(".slide")
-const a = document.querySelector(".card")
 
 for (const slide of slides) {
     slide.addEventListener("click", () => {
         clearActiveClasses()
-        changeBackgroundColor(getRandomColor())
-        // changeBorderColor(getRandomColor())
+        const randomColor = "rgb(" + getRandomInt(255) + "," + getRandomInt(255) + "," + getRandomInt(255) + ")"
+        changeBackgroundColor(randomColor)
         slide.classList.add("active")
     })
 }
@@ -13,10 +12,6 @@ for (const slide of slides) {
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
-
-function getRandomColor() {
-    return "rgb(" + getRandomInt(255) + "," + getRandomInt(255) + "," + getRandomInt(255) + ")"
-}
 
 function clearActiveClasses() {
     slides.forEach((slide) => {
@@ -27,7 +22,3 @@ function clearActiveClasses() {
 function changeBackgroundColor(color) {
     document.body.style.backgroundColor = color 
 }
-
-// function changeBorderColor(color) {
-//     a.style.borderColor = color
-// }
