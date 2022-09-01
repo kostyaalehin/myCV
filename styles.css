@@ -57,7 +57,6 @@ a:visited {
 
 .card {
     font-size: 1vw;
-    /* font-size: 1vh; */
     white-space: nowrap;
     position: absolute;
     margin: 0;
@@ -66,7 +65,6 @@ a:visited {
     right: 5%;
     opacity: 0;
     text-align: right;
-    box-sizing: border-box;
     max-width: 90%;
     max-height: 90%;
     /* border: solid 5px;
@@ -88,6 +86,24 @@ a:visited {
     background: #86898f;
 }
 
+.info {
+    /* display: none; */
+    position: absolute;
+    margin: 0;
+    border-radius: 20px;
+    right: 5%;
+    top: 5%;
+    opacity: 0;
+    text-align: right;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.info p {
+    color: #000;
+    margin-bottom: 0px;
+}
+
 .slide h3 {
     position: absolute;
     background-color: #858991;
@@ -100,27 +116,27 @@ a:visited {
 }
 
 .slide h4 {
-    font-size: 1vw;
-    font-size: 2vh;
-    /* top: 5%;
-    left: 5%; */
     writing-mode: vertical-rl;
     background-color: #858991;
     border-radius: 20px;
     padding: 10px 5px;
     margin: 5px;
-    box-sizing: border-box;
     max-width: 90%;
     max-height: 90%;
 }
 
 .slide.active {
-    flex: 10;
+    flex: 12;
 }
 
 .slide.active .card {
     opacity: 1;
     transition: opacity 0.3s ease-in 0.4s;
+}
+
+.slide.active .info {
+    opacity: 1;
+    transition: all 0.3s ease-in 0.4s;
 }
 
 .slide.active h3 {
@@ -130,4 +146,41 @@ a:visited {
 
 .slide.active h4 {
     opacity: 0;
+}
+
+.slide.active table {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+table {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    opacity: 0;
+    box-sizing: border-box;
+    max-width: 90%;
+    max-height: 90%;
+    width: 90%;
+    height: 60%;
+    color: #000;
+}
+  
+table td {
+    padding-bottom: 0px;
+    padding-right: 25px;
+    border-bottom: 1px solid;
+}
+  
+table td:nth-child(2), 
+table td:nth-child(3) {
+    color: #86898f;
+}
+
+.connect {
+    display: none;
+}
+
+.slide.active .connect {
+    display: inline;
 }
